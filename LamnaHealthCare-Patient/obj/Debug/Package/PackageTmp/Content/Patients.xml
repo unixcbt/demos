@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patients>
   <Patient>
-    <DisplayName>Dr. Meston</DisplayName>
+    <DisplayName>Kate Holm</DisplayName>
     <SipAddress>kateh@generico.biz</SipAddress>
     <CalendarImage>/Content/Images/cal_katePhoto.png</CalendarImage>
     <AppointmentImage>/Content/Images/headshot.png</AppointmentImage>

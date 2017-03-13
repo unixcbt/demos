@@ -214,11 +214,6 @@
     $('#patient-name').click(function () {
         window.location = "Home/Appointment";
     });
-    $('#erick-loftus').hover(function () {
-        $(this).css('cursor', 'pointer');
-    });
-    $("#erick-loftus").click(function () {
-        window.location = "Home/Appointment";
-    });
+
 
 });

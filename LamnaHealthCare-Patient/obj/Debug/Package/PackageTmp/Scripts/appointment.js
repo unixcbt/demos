@@ -11,7 +11,6 @@
         function (api) {
             Application = api.application;
             client = new Application();
-            registerAppListener();
             init();
         },
         function (err) {
@@ -30,29 +29,14 @@
     var fullscreen = false;
     var conversation = null;
     var confUri = "sip:danewman@microsoft.com;gruu;opaque=app:conf:focus:id:840GR8M5";
-    var conferenceRoomURL = "https://meet.lync.com/microsoft/danewman/840GR8M5";
     var meetingurl = "https://meet.lync.com/metio/toshm/V16WYJRM";
-    var serviceurl = "https://adhocmeeting.cloudapp.net";
+    var serviceurl = "http://adhocmeeting.cloudapp.net";
     
-    function guid() {
-        function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-              .toString(16)
-              .substring(1);
-        }
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-    };
 
     var anonAppInput = {
-        ApplicationSessionId: guid(),
+        ApplicationSessionId: "AnonMeeting",
         AllowedOrigins: window.location.href,
         MeetingUrl: meetingurl
-    };
-
-    var anonAppInput_Conference = {
-        ApplicationSessionId: guid(),
-        AllowedOrigins: window.location.href,
-        MeetingUrl: conferenceRoomURL
     };
     
     var anonmeetingsignin = {};
@@ -230,8 +214,11 @@
                 });
             }
         });
+
+
         GetAdhocMeeting();
-   }
+
+    }
 
     function getconfid(meetingurl) {
         var confid = '';
@@ -262,13 +249,12 @@
         });
     }
 
-
     function GetAdhocMeeting() {
         var meetingurl;
 
         var getadhocmeetinginput = { Subject: 'adhocMeeting', Description: 'adhocMeeting', AccessLevel: '' };
 
-        ajaxrequest('post', 'https://adhocmeeting.cloudapp.net/GetAdhocMeetingJob', getadhocmeetinginput, 'text').done(function (d) {
+        ajaxrequest('post', 'http://adhocmeeting.cloudapp.net/GetAdhocMeetingJob', getadhocmeetinginput, 'text').done(function (d) {
             var data = JSON.parse(d);
             var meetingUrl = data.JoinUrl;
             var discoverUri = data.DiscoverUri;
@@ -286,104 +272,41 @@
             });
     }
 
-
-    function registerAppListener() {
-        var convAddedListener = client.conversationsManager.conversations.added(function (conversation) {
-
-            if (conversation.videoService.videoMode() === 'MultiView') {
-                subscribeToParticipantsAdded();
-            } else if (conversation.videoService.videoMode() === 'ActiveSpeaker') {
-                subscribeToActiveSpeaker();
-            }
-
-            conversation.state.changed(function onDisconnect(state) {
-                if (state === 'Disconnected') {
-                    conversation.state.changed.off(onDisconnect);
-                    client.conversationsManager.conversations.remove(conversation);
-                }
-            });
-
-            function subscribeToSelfVideoState() {
-                return conversation.selfParticipant.video.state.changed(function (newState, reason, oldState) {
-                    var channel;
-                    if (newState === 'Notified' && !timerId) {
-                        timerId = setTimeout(onAudioVideoNotified, 0);
-                    } else if (newState === 'Connected') {
-                        console.log('Self video on from patient side');
-                        setTimeout(function () {
-                            channel = conversation.selfParticipant.video.channels(0);
-                            channel.stream.source.sink.container.set(document.getElementById("myVideo"));
-                            $('#myVideo').show();
-                        }, 5000);
-                    }
-                });
-            }
-            subscribeToSelfVideoState();
-
-            function subscribeToParticipantsAdded() {
-                var participantsAddedListnr = conversation.participants.added(function (participant) {
-                    participant.person.id.get().then(function (id) {
-
-                        var videoStateListnr = participant.video.state.when('Connected', function () {
-
-                            participant.video.channels(0).stream.source.sink.container.set(document.getElementById("patientWindow"));
-
-                            var videoOnListnr = participant.video.channels(0).isVideoOn.when(true, function () {
-                                participant.video.channels(0).isStarted(true);
-                                $('#patientWindow').show();
-                                $('#loading-content').hide();
-                                $('#skypeBackgroundImage').hide();
-                            });
-
-                            var videoOffListnr = participant.video.channels(0).isVideoOn.when(false, function () {
-                                participant.video.channels(0).isStarted(false);
-                            });
-                        });
-
-
-                    });
-                });
-            }
-
-            function subscribeToActiveSpeaker() {
-                var activeSpeaker = conversation.videoService.activeSpeaker;
-
-                activeSpeaker.channel.stream.source.sink.container.set(document.getElementById("patientWindow"));
-
-                var videoOnListener = activeSpeaker.channel.isVideoOn.when(true, function () {
-                    activeSpeaker.channel.isStarted(true);
-                    $('#patientWindow').show();
-
-                    $('#loading-content').hide();
-                    $('#skypeBackgroundImage').hide();
-
-                    console.log('ActiveSpeaker video is available and has been turned on.');
-                });
-
-                var videoOffListener = activeSpeaker.channel.isVideoOn.when(false, function () {
-                    activeSpeaker.channel.isStarted(false);
-                    console.log('ActiveSpeaker video is not available anymore and has been turned off.');
-                });
-
-                // the .participant object changes when the active speaker changes
-                var participantChangedListener = activeSpeaker.participant.changed(function (newValue, reason, oldValue) {
-                    console.log('The ActiveSpeaker has changed. Old ActiveSpeaker:', oldValue && oldValue.displayName(), 'New ActiveSpeaker:', newValue && newValue.displayName());
-                });
-            }
-        });
-    }
-
     function joinConference() {
         //var confUri = getconfid(meetingurl);
-        conversation = client.conversationsManager.getConversationByUri(confUri);
+        conversation = client.conversationsManager.conversations(0);
 
-        conversation.videoService.start().then(null, function (error) {
-            if (error.code && error.code == 'PluginNotInstalled') {
-                console.log('You can install the plugin from:');
-                console.log('(Windows) https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeMeetingsApp.msi');
-                console.log('(Mac) https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeForBusinessPlugin.pkg');
+        conversation.selfParticipant.video.state.changed(function (newState) {
+            var selfChannel;
+            if (newState == 'Connected') {
+                                
+                var p = conversation.participants(0);
+                var channel = p.video.channels(0);
+
+                channel.stream.source.sink.container.set(document.getElementById("patientWindow")).then(function () {
+                    p.video.channels(0).isStarted.set(true);
+                });
+
+
+                $('#loading-content').hide();
+                $('#skypeBackgroundImage').hide();
+
+                $('#patientWindow').show();
+                $('#myVideo').show();
+
+                if (p && p.displayName()) {
+                    $('#patientname').html(p.displayName());
+                }
+
+                setTimeout(function () {
+                    selfChannel = conversation.selfParticipant.video.channels(0);
+                    selfChannel.stream.source.sink.container.set(document.getElementById("myVideo"));
+
+                }, 200);
             }
         });
+
+        conversation.videoService.start();
     }
 
     function hangupClick() {
@@ -393,14 +316,13 @@
                 // or a failure
                 alert(error || 'Cannot sign out');
             });
-    }    
-
-
-
+    }
 
 
     ///get anon meeting token and sign in
     function getanonmeetingtoken() {
+        
+
         $.ajax({
             url: serviceurl + '/GetAnonTokenJob',
             type: 'post',
@@ -415,7 +337,7 @@
                     var user = data.DiscoverUri;
 
                     anonmeetingsignin = {
-                        name: 'AnonUser' + Math.floor((Math.random() * 100) + 1),
+                        name: 'AnonUser',
                         cors: true,
                         root: { user: user },
                         auth: function (req, send) {
@@ -429,15 +351,16 @@
                     //sign in with anon meeting token
                     client.signInManager.signIn(anonmeetingsignin).then(function () {
                         console.log('Signed in successfully');
-                        $('#doctor-photo').show();
-                        $('#doctor-name').text('Dr. ' + client.personsAndGroupsManager.mePerson.displayName());
-                        $('#online-indicator').css({ 'background-color': '#5DD255' });
-                        //Join conference and start video
-                        joinConference();
+                            $('#doctor-photo').show();
+                            $('#doctor-name').text('Dr. ' + client.personsAndGroupsManager.mePerson.displayName());
+                            $('#online-indicator').css({ 'background-color': '#5DD255' });
+                            //Join conference and start video
+                            joinConference();                            
                     }, function (error) {
                         console.log(error);
                     });
                 }
+
             },
             error: function (error) { console.log(error); }
         });

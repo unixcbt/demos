@@ -21,7 +21,7 @@
 <div class="row" style="margin-left:0">
     <div class="col-md-6 upcoming-appointment">
         <div class="upcoming-appt-header">
-            Appointment
+            Next Appointment
         </div>
         <div class="row" style="margin-left:0">
             <div id="appt-img" class="col-md-3" style="width:80px; height: 80px;">
@@ -31,6 +31,7 @@
             </div>
             <div id="appt-group" class="col-md-6">
                 <div class="font-xxlarge" style="color:#459CE3" id="patient-name">@Html.Raw(string.IsNullOrEmpty(Model.DisplayName) ? Model.DefaultDisplayName : Model.DisplayName)</div>
+                <div id="appt-time" class="font-large">11:00am</div>
                 <div id="patient-ready" class="font-large" style="color:red;display: none">Patient is waiting, click to join.</div>
             </div>
             <div class="col-md-3 pull-right" style="padding: 0">
@@ -52,11 +53,11 @@
             Upcoming Appointment
         </div>
         <div class="row" style="margin-left:0">
-            <div class="col-md-3"  style="width:80px; height: 80px;">
+            <div class="col-md-3" style="width:80px; height: 80px;">
                 <img src="~/Content/Images/cal_jeremyPhoto.png" style="margin-left:-16px" />
             </div>
             <div class="col-md-6">
-                <div class="font-xxlarge" id="erick-loftus" style="color:#459CE3">Erick Loftus</div>
+                <div class="font-xxlarge" style="color:#459CE3">Erick Loftus</div>
                 <div class="font-large">12:30pm</div>
             </div>
             <div class="col-md-3 pull-right" style="padding: 0">
@@ -108,6 +109,14 @@
                 <span class="cal-content">
                     <span class="cal-appt cal-selected-day">
                     </span>
+                    <span class="cal-appt cal-appt-2 half-hour cal-appt-offset-1 appt">
+                        <span class="cal-appt-name">Alfreda Howard</span>
+                        <span class="cal-appt-time">9:30a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 cal-appt-offset-3 appt">
+                        <span class="cal-appt-name">Rick McPherson</span>
+                        <span class="cal-appt-time">9:00a</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>
@@ -119,6 +128,14 @@
                     10am
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Christie Burton</span>
+                        <span class="cal-appt-time">10:00a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Ted Gower</span>
+                        <span class="cal-appt-time">10:00a</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>
@@ -130,9 +147,23 @@
                     11am
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 half-hour appt">
+                        <span class="cal-appt-name">Kelly Riddle</span>
+                        <span class="cal-appt-time">11:30a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-1 half-hour meeting cal-appt-offset-2">
+                        <span class="cal-appt-name">Staff Meeting</span>
+                    </span>
                     <span class="cal-appt cal-appt-2 appt cal-appt-offset-3">
                         <span class="cal-appt-name" id="calendar-name">@Model.DisplayName</span>
-                        <span class="cal-appt-time">11:00a <b>Dr. Meston</b></span>
+                        <span class="cal-appt-time">11:00a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Effie Solomon</span>
+                        <span class="cal-appt-time">11:00a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-1 half-hour meeting cal-appt-offset-5">
+                        <span class="cal-appt-name">Staff Meeting</span>
                     </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
@@ -145,8 +176,21 @@
                     12pm
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Wendell Pitman</span>
+                        <span class="cal-appt-time">12:00p</span>
+                    </span>
                     <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-3">
-                        <span class="cal-appt-time">12:30p <b>Erick Loftus</b></span>
+                        <span class="cal-appt-name">Erick Loftus</span>
+                        <span class="cal-appt-time">12:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Cleveland Dibble</span>
+                        <span class="cal-appt-time">12:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Tamara Ayala</span>
+                        <span class="cal-appt-time">12:00p</span>
                     </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
@@ -159,6 +203,18 @@
                     1pm
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt">
+                        <span class="cal-appt-name">Roderick Fries</span>
+                        <span class="cal-appt-time">1:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-3">
+                        <span class="cal-appt-name">Thurman Withrow</span>
+                        <span class="cal-appt-time">1:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Clifton Judkins</span>
+                        <span class="cal-appt-time">1:00p</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>
@@ -170,6 +226,18 @@
                     2pm
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt">
+                        <span class="cal-appt-name">Darlene McKay</span>
+                        <span class="cal-appt-time">2:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour meeting cal-appt-offset-4">
+                        <span class="cal-appt-name">Meeting w/ Olivia</span>
+                        <span class="cal-appt-time">2:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Johnnie Lowman</span>
+                        <span class="cal-appt-time">2:00p</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>
@@ -181,6 +249,18 @@
                     3pm
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Cathy Donovan</span>
+                        <span class="cal-appt-time">3:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-3">
+                        <span class="cal-appt-name">Janelle Wagner</span>
+                        <span class="cal-appt-time">3:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Terence Rupert</span>
+                        <span class="cal-appt-time">3:30p</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>
@@ -192,6 +272,18 @@
                     4pm
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 half-hour appt">
+                        <span class="cal-appt-name">Gracie Gutierrez</span>
+                        <span class="cal-appt-time">4:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Ollie Theriault</span>
+                        <span class="cal-appt-time">4:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Melisa Wong</span>
+                        <span class="cal-appt-time">4:00p</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>
@@ -203,6 +295,10 @@
                     5pm
                 </span>
                 <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Katheryn Jacobson</span>
+                        <span class="cal-appt-time">5:00p</span>
+                    </span>
                     <span class="cal-border cal-border-1"></span>
                     <span class="cal-border cal-border-2"></span>
                     <span class="cal-border cal-border-3"></span>

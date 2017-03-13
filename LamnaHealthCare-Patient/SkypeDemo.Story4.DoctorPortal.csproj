@@ -17,8 +17,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -169,7 +169,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\DoctorPortal_LocalPublish.pubxml" />
-    <None Include="Properties\PublishProfiles\doctor_patient.pubxml" />
     <None Include="Properties\PublishProfiles\healthcarenocc - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\lamnaHealthcare.pubxml" />
     <None Include="Properties\PublishProfiles\lamnahealthcarePatient %282%29.pubxml" />
