@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patients>
+  <Patient>
+    <DisplayName>Kate Holm</DisplayName>
+    <SipAddress>kateh@generico.biz</SipAddress>
+    <CalendarImage>/Content/Images/cal_katePhoto.png</CalendarImage>
+    <AppointmentImage>/Content/Images/headshot.png</AppointmentImage>
+  </Patient>
+  <Patient>
+    <DisplayName>Matt Hudson</DisplayName>
+    <SipAddress>mhudson@generico.biz</SipAddress>
+    <CalendarImage>/Content/Images/cal_katePhoto.png</CalendarImage>
+    <AppointmentImage>/Content/Images/headshot.png</AppointmentImage>  
+  </Patient>
+  <Patient>
+    <DisplayName>Yina Arenas</DisplayName>
+    <SipAddress>heidis@generico.biz</SipAddress>
+    <CalendarImage>/Content/Images/cal_yinaPhoto.png</CalendarImage>
+    <AppointmentImage>/Content/Images/yina_headshot.png</AppointmentImage>  
+  </Patient>
+</Patients>

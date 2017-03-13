@@ -1,0 +1,33 @@
+﻿@Html.Hidden("loginUrl", Url.Action("Index", "Home"))
+
+<form class="loginForm">
+    <h4>Sign In</h4>
+
+    <div class="form-group">
+        <input name="submit" class="btn btn-default" value="Sign in with O365" type="submit" />
+    </div>
+
+    @*<div class="form-group">
+        <input class="form-control" name="username" type="text" placeholder="Username" value='@Request.QueryString["sip"]' />
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="password" type="password" placeholder="Password" value='@Request.QueryString["pw"]' />
+    </div>
+    <div class="validation-summary-errors"></div>
+    <div class="form-group">
+        <input name="submit" class="btn btn-default" value="Sign in" type="submit" />
+    </div>
+    <div style="min-height: 15px">
+        <span class="cursor glyphicon glyphicon-cog pull-left" style="margin: 9px 0 0 -25px;" onclick="$('.patientInfoFormGroup').toggle('slide')"></span>
+        <div class="form-group patientInfoFormGroup" style="display:none">
+            <input class="form-control" name="patient" type="text" placeholder="Patient" value='@Request.QueryString["patient"]' />
+        </div>
+        <div class="form-group patientInfoFormGroup" style="display:none">
+            <input class="form-control" name="displayName" type="text" placeholder="Display Name" value='@Request.QueryString["displayName"]' />
+        </div>
+    </div>*@
+
+</form>
+@*<script src="~/Scripts/account.login.js" typeof="text/javascript"></script>*@
+
+<script src="~/Scripts/onlinesignin.js" typeof="text/javascript"></script>

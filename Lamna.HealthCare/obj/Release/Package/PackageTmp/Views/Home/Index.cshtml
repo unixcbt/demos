@@ -1,0 +1,337 @@
+﻿@model SkypeDemo.Story4.DoctorPortal.ViewModels.AppointmentViewModel
+
+@Html.HiddenFor(model => model.SkypeUserId, new { @id = "skypeUserId" })
+@Html.HiddenFor(model => model.SkypePassword, new { @id = "skypePassword" })
+@Html.HiddenFor(model => model.EndpointSip, new { @id = "endpointSip" })
+@Html.HiddenFor(model => model.PatientId, new { @id = "patientId" })
+
+@using (Html.BeginForm("Index", "Home",  FormMethod.Post,new {@id="submitForm"}))
+{
+    @Html.HiddenFor(model => model.ConferenceUri, new { @id = "conferenceUriDisplay" })
+    @Html.HiddenFor(model => model.SkypeUserId)
+    @Html.HiddenFor(model => model.SkypePassword)
+    @Html.HiddenFor(model => model.PatientId, new { @id = "sipAddress" })
+    @Html.HiddenFor(model => model.DisplayName, new { @id = "displayName" })
+}
+@Html.HiddenFor(model => model.DefaultDisplayName, new { @id = "defaultDisplayName" })
+@Html.HiddenFor(model => model.DisplayName, new { @id = "providedDisplayName" })
+
+<button type="submit" id="btnJoin" class="btn btn-danger btn-lg" style="float:right; display:none">Join Appointment</button>
+
+<div class="row" style="margin-left:0">
+    <div class="col-md-6 upcoming-appointment">
+        <div class="upcoming-appt-header">
+            Next Appointment
+        </div>
+        <div class="row" style="margin-left:0">
+            <div id="appt-img" class="col-md-3" style="width:80px; height: 80px;">
+                @if (!string.IsNullOrEmpty(Model.CalendarImage)) { 
+                <img src="@Url.Content(Model.CalendarImage)" style="margin-left:-16px" />
+                }
+            </div>
+            <div id="appt-group" class="col-md-6">
+                <div class="font-xxlarge" style="color:#459CE3" id="patient-name">@Html.Raw(string.IsNullOrEmpty(Model.DisplayName) ? Model.DefaultDisplayName : Model.DisplayName)</div>
+                <div id="appt-time" class="font-large">11:00am</div>
+                <div id="patient-ready" class="font-large" style="color:red;display: none">Patient is waiting, click to join.</div>
+            </div>
+            <div class="col-md-3 pull-right" style="padding: 0">
+                <div class="dropdown" style="margin-top:12px">
+                    <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="width:125px">
+                        View
+                        <span class="caret" style="margin-left:56px"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Patient History</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Appointment History</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 upcoming-appointment" style="border-style:none">
+        <div class="upcoming-appt-header">
+            Upcoming Appointment
+        </div>
+        <div class="row" style="margin-left:0">
+            <div class="col-md-3" style="width:80px; height: 80px;">
+                <img src="~/Content/Images/cal_jeremyPhoto.png" style="margin-left:-16px" />
+            </div>
+            <div class="col-md-6">
+                <div class="font-xxlarge" style="color:#459CE3">Erick Loftus</div>
+                <div class="font-large">12:30pm</div>
+            </div>
+            <div class="col-md-3 pull-right" style="padding: 0">
+                <div class="dropdown" style="margin-top:12px">
+                    <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="width:125px">
+                        View
+                        <span class="caret" style="margin-left:56px"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Patient History</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Appointment History</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <section id="calendar" class="calendar">
+            <div class="cal-header">
+                <span class="cal-content">
+                    <span class="glyphicon glyphicon-chevron-left" style="margin:9px 60px 0 42px"></span>
+                    <span class="cal-header-item " style="margin-left:10px !important">
+                        Mon @Model.Monday
+                    </span>
+                    <span class="cal-header-item" style="margin-left:230px !important">
+                        Tue @Model.Tuesday
+                    </span>
+                    <span class="cal-header-item cal-appt-offset-3" style="margin-left:440px !important;color:#459CE3">
+                        Wed @Model.Wednesday
+                    </span>
+                    <span class="cal-header-item cal-appt-offset-4" style="margin-left:660px !important">
+                        Thu @Model.Thursday
+                    </span>
+                    <span class="cal-header-item cal-appt-offset-5" style="margin-left:888px !important">
+                        Fri @Model.Friday
+                    </span>
+                    <span class="glyphicon glyphicon-chevron-right" style="margin:18px 0 0 1016px; position: absolute"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    9am
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-selected-day">
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour cal-appt-offset-1 appt">
+                        <span class="cal-appt-name">Alfreda Howard</span>
+                        <span class="cal-appt-time">9:30a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 cal-appt-offset-3 appt">
+                        <span class="cal-appt-name">Rick McPherson</span>
+                        <span class="cal-appt-time">9:00a</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    10am
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Christie Burton</span>
+                        <span class="cal-appt-time">10:00a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Ted Gower</span>
+                        <span class="cal-appt-time">10:00a</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    11am
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 half-hour appt">
+                        <span class="cal-appt-name">Kelly Riddle</span>
+                        <span class="cal-appt-time">11:30a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-1 half-hour meeting cal-appt-offset-2">
+                        <span class="cal-appt-name">Staff Meeting</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-3">
+                        <span class="cal-appt-name" id="calendar-name">@Model.DisplayName</span>
+                        <span class="cal-appt-time">11:00a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Effie Solomon</span>
+                        <span class="cal-appt-time">11:00a</span>
+                    </span>
+                    <span class="cal-appt cal-appt-1 half-hour meeting cal-appt-offset-5">
+                        <span class="cal-appt-name">Staff Meeting</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    12pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Wendell Pitman</span>
+                        <span class="cal-appt-time">12:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-3">
+                        <span class="cal-appt-name">Erick Loftus</span>
+                        <span class="cal-appt-time">12:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Cleveland Dibble</span>
+                        <span class="cal-appt-time">12:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Tamara Ayala</span>
+                        <span class="cal-appt-time">12:00p</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    1pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt">
+                        <span class="cal-appt-name">Roderick Fries</span>
+                        <span class="cal-appt-time">1:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-3">
+                        <span class="cal-appt-name">Thurman Withrow</span>
+                        <span class="cal-appt-time">1:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Clifton Judkins</span>
+                        <span class="cal-appt-time">1:00p</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    2pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt">
+                        <span class="cal-appt-name">Darlene McKay</span>
+                        <span class="cal-appt-time">2:00p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour meeting cal-appt-offset-4">
+                        <span class="cal-appt-name">Meeting w/ Olivia</span>
+                        <span class="cal-appt-time">2:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Johnnie Lowman</span>
+                        <span class="cal-appt-time">2:00p</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    3pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Cathy Donovan</span>
+                        <span class="cal-appt-time">3:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-3">
+                        <span class="cal-appt-name">Janelle Wagner</span>
+                        <span class="cal-appt-time">3:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-5">
+                        <span class="cal-appt-name">Terence Rupert</span>
+                        <span class="cal-appt-time">3:30p</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    4pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 half-hour appt">
+                        <span class="cal-appt-name">Gracie Gutierrez</span>
+                        <span class="cal-appt-time">4:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 half-hour appt cal-appt-offset-2">
+                        <span class="cal-appt-name">Ollie Theriault</span>
+                        <span class="cal-appt-time">4:30p</span>
+                    </span>
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Melisa Wong</span>
+                        <span class="cal-appt-time">4:00p</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    5pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-appt cal-appt-2 appt cal-appt-offset-4">
+                        <span class="cal-appt-name">Katheryn Jacobson</span>
+                        <span class="cal-appt-time">5:00p</span>
+                    </span>
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+
+            <div class="cal-row">
+                <span class="cal-time">
+                    6pm
+                </span>
+                <span class="cal-content">
+                    <span class="cal-border cal-border-1"></span>
+                    <span class="cal-border cal-border-2"></span>
+                    <span class="cal-border cal-border-3"></span>
+                </span>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<div id="patientOverlay" class="overlay" style="display:none">
+    <span class="overlay-patient">Your patient, <span id="overlay-name">@Html.Raw(string.IsNullOrEmpty(Model.DisplayName) ? Model.DefaultDisplayName : Model.DisplayName)</span>, has arrived.</span>
+    <span class="overlay-time">11:00a</span>
+</div>
+
+@*@Html.ActionLink("Appointment", "Appointment", null, new { @id="navItem", @style="display:none" })*@
+
+<br /><br />
+
+@section scripts {
+    <script src="~/Scripts/config.js" typeof="text/javascript"></script>
+    <script src="~/Scripts/index.js" typeof="text/javascript"></script>
+    <script src="~/Scripts/jquery.effects.core.js"></script>
+    <script src="~/Scripts/jquery.effects.slide.js"></script>
+}

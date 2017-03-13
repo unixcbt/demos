@@ -1,0 +1,98 @@
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\Content\Patients.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\SkypeDemo.Story4.DoctorPortal.dll.config
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\SkypeDemo.Story4.DoctorPortal.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\SkypeDemo.Story4.DoctorPortal.pdb
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\Antlr3.Runtime.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\Newtonsoft.Json.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Helpers.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Mvc.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Optimization.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Razor.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.WebPages.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\WebGrease.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Helpers.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Mvc.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Optimization.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.Razor.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.WebPages.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\Newtonsoft.Json.xml
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\bin\Antlr3.Runtime.pdb
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\obj\Debug\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\obj\Debug\SkypeDemo.Story4.DoctorPortal.dll
+C:\Users\kballinas\Documents\projects\SkypeDemo\Skype Build Demo\Main\SkypeDemo\SkypeDemo.Story4.DoctorPortal\obj\Debug\SkypeDemo.Story4.DoctorPortal.pdb
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\Content\Patients.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll.config
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.pdb
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\Microsoft.Web.Infrastructure.dll
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\Newtonsoft.Json.dll
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.Mvc.dll
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\Microsoft.Web.Infrastructure.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.Helpers.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.Optimization.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.Razor.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.WebPages.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.WebPages.Deployment.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\System.Web.WebPages.Razor.xml
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\bin\Antlr3.Runtime.pdb
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.dll
+E:\OnlineDemo\SkypeDemo.Story4.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.pdb
+E:\OnlineDemo\Lamna.HealthCare\bin\Content\Patients.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll.config
+E:\OnlineDemo\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll
+E:\OnlineDemo\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.pdb
+E:\OnlineDemo\Lamna.HealthCare\bin\Microsoft.Web.Infrastructure.dll
+E:\OnlineDemo\Lamna.HealthCare\bin\Newtonsoft.Json.dll
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Mvc.dll
+E:\OnlineDemo\Lamna.HealthCare\bin\Microsoft.Web.Infrastructure.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Helpers.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Optimization.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Razor.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.WebPages.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.WebPages.Deployment.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\System.Web.WebPages.Razor.xml
+E:\OnlineDemo\Lamna.HealthCare\bin\Antlr3.Runtime.pdb
+E:\OnlineDemo\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
+E:\OnlineDemo\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.dll
+E:\OnlineDemo\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.pdb
+C:\OnlineDemo\Lamna.HealthCare\bin\Content\Patients.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll.config
+C:\OnlineDemo\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll
+C:\OnlineDemo\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.pdb
+C:\OnlineDemo\Lamna.HealthCare\bin\Microsoft.Web.Infrastructure.dll
+C:\OnlineDemo\Lamna.HealthCare\bin\Newtonsoft.Json.dll
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Mvc.dll
+C:\OnlineDemo\Lamna.HealthCare\bin\Microsoft.Web.Infrastructure.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Helpers.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Optimization.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.Razor.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.WebPages.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.WebPages.Deployment.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\System.Web.WebPages.Razor.xml
+C:\OnlineDemo\Lamna.HealthCare\bin\Antlr3.Runtime.pdb
+C:\OnlineDemo\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
+C:\OnlineDemo\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.dll
+C:\OnlineDemo\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.pdb
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\Content\Patients.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll.config
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.dll
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\SkypeDemo.Story4.DoctorPortal.pdb
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\Microsoft.Web.Infrastructure.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.Helpers.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.Mvc.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.Optimization.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.Razor.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.WebPages.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.WebPages.Deployment.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\System.Web.WebPages.Razor.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\Newtonsoft.Json.xml
+C:\allfilesfrombonjour\Lamna.HealthCare\bin\Antlr3.Runtime.pdb
+C:\allfilesfrombonjour\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
+C:\allfilesfrombonjour\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.dll
+C:\allfilesfrombonjour\Lamna.HealthCare\obj\Debug\SkypeDemo.Story4.DoctorPortal.pdb
