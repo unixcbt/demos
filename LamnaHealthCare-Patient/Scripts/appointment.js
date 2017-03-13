@@ -30,6 +30,7 @@
     var fullscreen = false;
     var conversation = null;
     var confUri = "sip:danewman@microsoft.com;gruu;opaque=app:conf:focus:id:840GR8M5";
+    var conferenceRoomURL = "https://meet.lync.com/microsoft/danewman/840GR8M5";
     var meetingurl = "https://meet.lync.com/metio/toshm/V16WYJRM";
     var serviceurl = "https://adhocmeeting.cloudapp.net";
     
@@ -46,6 +47,12 @@
         ApplicationSessionId: guid(),
         AllowedOrigins: window.location.href,
         MeetingUrl: meetingurl
+    };
+
+    var anonAppInput_Conference = {
+        ApplicationSessionId: guid(),
+        AllowedOrigins: window.location.href,
+        MeetingUrl: conferenceRoomURL
     };
     
     var anonmeetingsignin = {};
@@ -223,14 +230,7 @@
                 });
             }
         });
-        if (conferenceUri == "conferenceRoom")
-        {
-            joinConference();
-        }
-        else
-        {
-            GetAdhocMeeting();
-        }
+        GetAdhocMeeting();
    }
 
     function getconfid(meetingurl) {
@@ -375,10 +375,15 @@
 
     function joinConference() {
         //var confUri = getconfid(meetingurl);
-        conversation = client.conversationsManager.conversations(0);
-        var videomode = conversation.videoService.videoMode();        
-        //conversation.chatService.start();
-        conversation.videoService.start();
+        conversation = client.conversationsManager.getConversationByUri(confUri);
+
+        conversation.videoService.start().then(null, function (error) {
+            if (error.code && error.code == 'PluginNotInstalled') {
+                console.log('You can install the plugin from:');
+                console.log('(Windows) https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeMeetingsApp.msi');
+                console.log('(Mac) https://swx.cdn.skype.com/s4b-plugin/16.2.0.67/SkypeForBusinessPlugin.pkg');
+            }
+        });
     }
 
     function hangupClick() {
@@ -388,7 +393,10 @@
                 // or a failure
                 alert(error || 'Cannot sign out');
             });
-    }
+    }    
+
+
+
 
 
     ///get anon meeting token and sign in

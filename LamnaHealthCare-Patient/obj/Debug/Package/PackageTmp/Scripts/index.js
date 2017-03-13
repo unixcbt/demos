@@ -212,7 +212,7 @@
     });
 
     $('#patient-name').click(function () {
-        window.location = "Home/Appointment?conferenceUri=conferenceRoom";
+        window.location = "Home/Appointment";
     });
     $('#erick-loftus').hover(function () {
         $(this).css('cursor', 'pointer');
