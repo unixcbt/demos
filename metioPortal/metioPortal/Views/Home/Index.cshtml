@@ -1,0 +1,220 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal"></div>
+<div class="sign-in-container">
+    <div class="sign-in-frame">
+        <div class="sign-in-title">Sign in</div>
+        <input class="ui-input" placeholder="someone@example.com" id="username" type="email" value="">
+
+        <input id="password" placeholder="password" type="password" class="ui-input " value="">
+        <div class="ui-button" id="signin">Sign in</div>
+    </div>
+</div>
+<div class="container" authenticated="@User.Identity.IsAuthenticated">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="t-bg-color"></span>
+                    <span class="t-bg-color"></span>
+                    <span class="t-bg-color"></span>
+                    <span class="t-bg-color"></span>
+                </div>
+                <div class="logo-metio t-color">Metio Online</div>
+                <div class="logo-bank t-color">Skype Developer Platform Demos</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style=" color #666666; padding-bottom 8px; padding-left 10px; font-size 16px; margin-bottom 20px;">
+            Demos MUST be booked
+            before using. Send a meeting request to ucdev@microsoft.com, and the automated
+            account will either accept or deny based on availability.
+        </div>
+    </div>
+
+    @*business*@
+    <div class="row d-row">      
+
+        <div class="col-md-4 portfolio-item fabrikam" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/Fabrikam5k.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://fabrikamrunner.azurewebsites.net/" title="Live Demo">Fabrikam 5k</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/Fabrikam_runner/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+
+        <div class="col-md-4 portfolio-item fabrikam" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/fabrikamagent.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://fabrikamshoes.azurewebsites.net/ " title="Live Demo">Fabrikam Shoes</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/Fabrikam_sales/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+        <div class="col-md-4 portfolio-item fabrikam" available="true">
+            <a href="portal/video/video.html?video=fabrikam" target="_blank">
+                <img class="normal" src="images/fabrikam.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://fabrikamagent.azurewebsites.net/ " title="Live Demo">Fabrikam Agent</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/Fabrikam_sales/index.html" title="More Instruction" />
+            </h3>
+        </div>       
+    </div>
+
+    @*healthcare/*@
+    <div class="row d-row">
+
+        <div class="col-md-4 portfolio-item healthcare" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/healthcare.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://metiohealthcareonline.azurewebsites.net/" title="Live Demo">Metio Healthcare</span>
+                <img class="btn-instruction" src="images/info.png" target="http://metiohealthcareonline.azurewebsites.net/" title="More Instruction" />
+            </h3>
+        </div>
+
+
+        <div class="col-md-4 portfolio-item lamnahealthcare" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/lamnahealthcare.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://lamnahealthcare.azurewebsites.net/" title="Live Demo">Lamna Healthcare</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/lamnahealthcare/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+
+        <div class="col-md-4 portfolio-item lamnahealthcare" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/lamnaHealthCarePatient.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://lamnahealthcarepatient.azurewebsites.net/" title="Live Demo">Lamna Healthcare Patient</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/lamnahealthcare/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+
+
+    </div>
+
+    @*finance/bank*@
+    <div class="row d-row">
+
+        <div class="col-md-4 portfolio-item finserv" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/finserv.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://metiofinservonline.azurewebsites.net/" title="Live Demo">Finserv</span>
+                <img class="btn-instruction" src="images/info.png" target="http://metiofinservonline.azurewebsites.net/" title="More Instruction" />
+            </h3>
+        </div>
+
+        <div class="col-md-4 portfolio-item MetioBank" available="true">
+            <a href="portal/video/video.html?video=MetioBank" target="_blank">
+            <img class="img-responsive" src="images/metiobank.png" alt="">
+                <img class="normal" src="images/metiobank.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/metiobank.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://metiobank.azurewebsites.net/" title="Live Demo">MetioBank</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/metiobank/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+        <div class="col-md-4 portfolio-item fabrikam" available="true">
+            <a href="portal/video/video.html?video=northwindTraders" target="_blank">
+                <img class="normal" src="images/metiobankagent.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/metiobankagent.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://metiobankagent.azurewebsites.net/" title="Live Demo">MetioBank Agent</span>
+                <img class="btn-instruction" src="images/info.png" target="instructions/metiobank/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+    </div>
+
+    <div class="row d-row">
+
+        <div class="col-md-4 portfolio-item contact-center" available="true">
+            <a href="portal/video/video.html?video=contactcenter" target="_blank">
+                <img class="normal" src="images/contactcenter.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="/portal/contactcenter/" title="Live Demo">Contact Center</span>
+                <img class="btn-instruction" src="images/info.png" target="/portal/contactcenter/instructions/index.html" title="More Instruction" />
+            </h3>
+        </div>
+
+        <div class="col-md-4 portfolio-item fabrikam" available="true">
+            <a href="portal/video/video.html?video=northwindTraders" target="_blank">
+                <img class="normal" src="images/northwindTraders.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="/portal/NorthwindTraders" title="Live Demo">Northwind Traders</span>
+                <img class="btn-instruction" src="images/info.png" target="/portal/NorthwindTraders/instructions/instructions.html" title="More Instruction" />
+            </h3>
+        </div>
+
+        <div class="col-md-4 portfolio-item proposaltracker" available="true">
+            <a href="#" target="_blank">
+                <img class="normal" src="images/proposaltracker.png" title="Video" />
+            </a>
+            <img class="img-responsive" src="images/abnormal.png" alt="">
+            <h3>
+                <span class="btn-go" target="http://metioproposaltrackeronline.azurewebsites.net/" title="Live Demo">Proposal Tracker</span>
+                <img class="btn-instruction" src="images/info.png" target="http://metioproposaltrackeronline.azurewebsites.net/" title="More Instruction" />
+            </h3>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 50px;">
+            THESE PACKAGES AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+        </div>
+    </div>
+</div>
+
+<div id="right-container">
+    <span class="btn-hide-chat"></span>
+    <div class="slide-bar">
+        <span class="double-arrow-show">«</span>
+        <span class="double-arrow-hide">«</span>
+    </div>
+    <!--<aside id="chat-back"></aside>-->
+    <div id="chat">
+        <div class="monitor-bot">Monitor Bot</div>
+        <div class="chat-container">
+            <div id="message-list">
+            </div>
+            <div id="chat-input">
+                <input id="chat-input-text" placeholder="Ask me a question..." autocomplete="off"></input>
+            </div>
+        </div>
+    </div>
+</div>
