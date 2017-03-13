@@ -172,8 +172,11 @@
     <None Include="Properties\PublishProfiles\healthcarenocc - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\lamnaHealthcare.pubxml" />
     <None Include="Properties\PublishProfiles\lamnahealthcarePatient %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\lamnahealthcarePatient - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\lamnahealthcarePatient - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\lamnahealthcarePatient.pubxml" />
     <None Include="Properties\PublishProfiles\lhealthcare.pubxml" />
+    <None Include="Properties\PublishProfiles\localhost.pubxml" />
     <None Include="Properties\PublishProfiles\Metiolamnahealthcare.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\config.js" />
@@ -199,11 +202,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Appointment.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

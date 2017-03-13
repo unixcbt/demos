@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="E:\OnlineDemo\LamnaHealthCare-Patient\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
-  <setAcl path="E:\OnlineDemo\LamnaHealthCare-Patient\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="E:\OnlineDemo\LamnaHealthCare-Patient\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>

@@ -30,6 +30,7 @@
     var fullscreen = false;
     var conversation = null;
     var confUri = "sip:danewman@microsoft.com;gruu;opaque=app:conf:focus:id:840GR8M5";
+    var conferenceRoomURL = "https://meet.lync.com/microsoft/danewman/840GR8M5"
     var meetingurl = "https://meet.lync.com/metio/toshm/V16WYJRM";
     var serviceurl = "https://adhocmeeting.cloudapp.net";
     

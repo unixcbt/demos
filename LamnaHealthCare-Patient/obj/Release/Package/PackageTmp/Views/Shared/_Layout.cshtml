@@ -33,9 +33,9 @@
                 @Html.ActionLink(string.Format("Messages{0}", ViewContext.RouteData.Values["action"].ToString().Equals("Login", StringComparison.InvariantCultureIgnoreCase) ? "" : " (3)"), "Index", "Home", new { sip = @Request.QueryString["sip"], pw = @Request.QueryString["pw"], patient = @Request.QueryString["patient"] }, new { @class = "navbar-brand", @style = "color:white; margin-left:45px" })
 
                 <ul display="width:100%" class="nav navbar-nav navbar-right" style="margin-top:4px">
-                    <li><div id="doctor-photo" style="margin-top:2px; display:none"><img src="~/Content/Images/cal_drPhoto.png" /></div></li>
+                    <li><div id="doctor-photo" style="margin-top:2px; display:none"><img src="~/Content/Images/yina_headshot.png" /></div></li>
                     <li><div id="doctor-name" style="font-size: 16px; color: white; margin: 10px 0 0 10px"> </div></li>
-                    <li><div id="online-indicator" style="width:10px; height:10px; background-color:lightgray; margin-top:14px; margin-left:8px;border-radius:5px"></div></li>
+                    <li><div id="online-indicator" style="width:10px; height:10px; background-color:none; margin-top:14px; margin-left:8px;border-radius:5px"></div></li>
                 </ul>
             </div>
         </div>

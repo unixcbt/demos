@@ -81,3 +81,13 @@ E:\OnlineDemo\LamnaHealthCare-Patient\bin\Microsoft.Web.Infrastructure.xml
 E:\OnlineDemo\LamnaHealthCare-Patient\obj\Release\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
 E:\OnlineDemo\LamnaHealthCare-Patient\obj\Release\SkypeDemo.Story4.DoctorPortal.dll
 E:\OnlineDemo\LamnaHealthCare-Patient\obj\Release\SkypeDemo.Story4.DoctorPortal.pdb
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\Content\Patients.xml
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\SkypeDemo.Story4.DoctorPortal.dll.config
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\SkypeDemo.Story4.DoctorPortal.dll
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\SkypeDemo.Story4.DoctorPortal.pdb
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\System.Web.Mvc.dll
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\Microsoft.Web.Infrastructure.xml
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\bin\Newtonsoft.Json.xml
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\obj\Release\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\obj\Release\SkypeDemo.Story4.DoctorPortal.dll
+C:\allfilesfrombonjour\03-09-2017_updated\New\LamnaHealthCare-Patient\obj\Release\SkypeDemo.Story4.DoctorPortal.pdb

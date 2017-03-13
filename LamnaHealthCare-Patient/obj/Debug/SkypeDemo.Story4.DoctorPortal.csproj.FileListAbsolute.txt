@@ -61,7 +61,7 @@ C:\OnlineDemo\LamnaHealthCare-Patient\bin\SkypeDemo.Story4.DoctorPortal.pdb
 C:\OnlineDemo\LamnaHealthCare-Patient\bin\Microsoft.Web.Infrastructure.dll
 C:\OnlineDemo\LamnaHealthCare-Patient\bin\Newtonsoft.Json.dll
 C:\OnlineDemo\LamnaHealthCare-Patient\bin\Microsoft.Web.Infrastructure.xml
-C:\OnlineDemo\LamnaHealthCare-Patient\bin\System.Web.Mvc.xml
 C:\OnlineDemo\LamnaHealthCare-Patient\obj\Debug\SkypeDemo.Story4.DoctorPortal.csprojResolveAssemblyReference.cache
 C:\OnlineDemo\LamnaHealthCare-Patient\obj\Debug\SkypeDemo.Story4.DoctorPortal.dll
 C:\OnlineDemo\LamnaHealthCare-Patient\obj\Debug\SkypeDemo.Story4.DoctorPortal.pdb
+C:\OnlineDemo\LamnaHealthCare-Patient\bin\System.Web.Mvc.dll

@@ -212,7 +212,7 @@
     });
 
     $('#patient-name').click(function () {
-        window.location = "lamnahealthcarePatient/Home/Appointment";
+        window.location = "Home/Appointment";
     });
 
 

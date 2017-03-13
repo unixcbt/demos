@@ -18,19 +18,14 @@
                                 <img src="~/Content/Images/lamnaHealthcare.png" />
                                 <div class="loading-text">Your doctor will join the Skype call shortly. Please review the patient medical record.</div>
                             </div>
-                            @*<img alt="loading..." style="height:40px;position:absolute;left: 380px;top: 236px;"
-                                 src="~/Content/Images/spinner.gif"
-                                 id="loading-spinner" />*@
-
 
                             <div id="patientWindow" style="width: 800px; height: 514px; display: none; background: gray;" />
-
-                            <div class="my-video"
-                                 style="display:none;position:absolute;z-index:+10000; background:whitesmoke;height:120px;width:200px;top:+15px; right:+15px;"
-                                 id="myVideo">
-                            </div>
-
                         </div>
+                        <div class="my-video"
+                             style="display:none;position:absolute;z-index:+10000; background:whitesmoke;height:120px;width:200px;top:+15px; right:+15px;"
+                             id="myVideo">
+                        </div>
+
                     </td>
                 </tr>
                 <tr>
@@ -55,8 +50,8 @@
         <div class="height-fill no-pad">
             <div style="background-color:#459CE3;height:140px; padding:12px">
                 <div class="font-medium" style="color:white">Appointment with</div>
-                <div id="patientname" class="font-xxlarge" style="margin-top:-4px;color:white">@Model.DisplayName</div>
-                <div class="font-medium" style="margin-top:-4px;color:white">11:00a</div>
+                <div id="patientname" class="font-xxlarge" style="margin-top:-4px;color:white">Doctor</div>
+                @*<div class="font-medium" style="margin-top:-4px;color:white">11:00a</div>*@
             </div>
             @if (!string.IsNullOrEmpty(Model.AppointmentImage)) { 
             <img src="@Url.Content(Model.AppointmentImage)" style="position: absolute; margin-top: -32px; margin-left: 16px;" />
@@ -65,15 +60,16 @@
                 <img class="pull-right" src="~/Content/Images/appt_plus.png" style="margin-right:24px; margin-top:16px;" />
             </div>
 
-            <ul class="nav nav-tabs" role="tablist" id="myTab" style="margin-top:8px">
+            @*<ul class="nav nav-tabs" role="tablist" id="myTab" style="margin-top:8px">
                 <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Patient Overview</a></li>
                 <li role="presentation"><a href="#sleep" aria-controls="sleep" role="tab" data-toggle="tab">Sleep</a></li>
                 <li role="presentation"><a href="#calories" aria-controls="calories" role="tab" data-toggle="tab">Calories</a></li>
                 <li role="presentation"><a href="#steps" aria-controls="steps" role="tab" data-toggle="tab">Steps</a></li>
-            </ul>
+            </ul>*@
 
             <div class="tab-content" style="margin-top:8px">
-                <div role="tabpanel" class="tab-pane fade in active" id="overview">
+
+                @*<div role="tabpanel" class="tab-pane fade in active" id="overview">
                     <div class="vital-section" style="border:none">
                         <div class="col-md-4 vital-subsection">
                             <div class="font-medium">ID#</div>
@@ -116,13 +112,10 @@
                                 <span class="font-xlarge" style="display:inline">lbs</span>
                                 <img src="~/Content/Images/appt_greenArrow.png" style="display:inline;margin-bottom:16px;margin-left:2px" />
                             </div>
-                        </div>
-                        @*<div class="col-md-5" style="margin: 10px -8px 0 8px; display:none">
-                    <div class="font-medium">Body Temp</div>
-                    <div class="font-xxlarge">97.9°</div>
+                        </div>                    
+                    </div>
                 </div>*@
-                    ></div>
-                </div>
+
                 <div role="tabpanel" class="tab-pane fade" id="sleep">
                     <div class="font-xxlarge">130h</div>
                     <img src="~/Content/Images/appt_sleep.png" />
