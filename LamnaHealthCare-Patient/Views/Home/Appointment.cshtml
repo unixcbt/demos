@@ -1,0 +1,234 @@
+﻿@model SkypeDemo.Story4.DoctorPortal.ViewModels.AppointmentViewModel
+@Html.HiddenFor(model => model.SkypePassword, new { @id = "skypePassword" })
+@Html.HiddenFor(model => model.EndpointSip, new { @id = "endpointSip" })
+@Html.HiddenFor(model => model.SkypeUserId, new { @id = "skypeUserId" })
+@Html.HiddenFor(model => model.ConferenceUri, new { @id = "conferenceUriDisplay" })
+@Html.HiddenFor(model => model.PatientId, new { @id = "patientId" })
+@Html.ActionLink("Index", "Index", null, new { @id = "homeLink", @style = "display:none" })
+
+<div class="row height-video">
+    <div id="leftColumn" class="col-md-8 height-fill no-pad">
+        <div id="divCallControl" class="row height-fill no-margin">
+            <table class="height-fill width-fill" style="table-layout: fixed">
+                <tr>
+                    <td>
+                        <div id="videoControl" style="width: 800px; height: 514px;background:gray">
+                            <img id="skypeBackgroundImage" src="~/Content/Images/skype-background.png" style="position:absolute" />
+                            <div id="loading-content" style="height:40px;position:absolute;left: 215px;top: 200px;">
+                                <img src="~/Content/Images/lamnaHealthcare.png" />
+                                <div class="loading-text">Your doctor will join the Skype call shortly. Please review the patient medical record.</div>
+                            </div>
+
+                            <div id="patientWindow" style="width: 800px; height: 514px; display: none; background: gray;" />
+                        </div>
+                        <div class="my-video"
+                             style="display:none;position:absolute;z-index:+10000; background:whitesmoke;height:120px;width:200px;top:+15px; right:+15px;"
+                             id="myVideo">
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: block;">
+                        <div id="callControls" class="block height-fill no-pad" style="width:800px;background: #333333;margin-top: -1px;height: 50px;">
+                            <div id="callButtons" class="col-md-12 block flex-container" style="margin: 1px; margin-left: 325px; padding-top: 15px;">
+                                <img id="btnVideo" alt="Stop Video" src="~/Content/Images/appt_video.png" style="cursor:pointer; margin-top:4px" />
+                                <img alt="Mute" src="~/Content/Images/appt_mic.png" style="cursor:pointer;margin:0 32px" />
+                                <img id="btnHangUp" alt="End Call" src="~/Content/Images/appt_endCall.png" style="cursor:pointer; margin-top:4px" />
+                            </div>
+                            <div class="pull-right" style="padding: 14px;padding-top: 0px;">
+                                <img id="btnFullScreen" alt="Full Screen" class="pull-right" src="~/Content/Images/appt_expand.png" style="cursor:pointer" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="sideInfo" class="col-md-4 height-fill">
+        <div class="height-fill no-pad">
+            <div style="background-color:#459CE3;height:140px; padding:12px">
+                <div class="font-medium" style="color:white">Appointment with</div>
+                <div id="patientname" class="font-xxlarge" style="margin-top:-4px;color:white">Doctor</div>
+                @*<div class="font-medium" style="margin-top:-4px;color:white">11:00a</div>*@
+            </div>
+            @if (!string.IsNullOrEmpty(Model.AppointmentImage)) { 
+            <img src="@Url.Content(Model.AppointmentImage)" style="position: absolute; margin-top: -32px; margin-left: 16px;" />
+            }
+            <div style="background-color:#1B6AAB;height:54px; border-style:solid; border-width:3px 0 0 0; border-color:white">
+                <img class="pull-right" src="~/Content/Images/appt_plus.png" style="margin-right:24px; margin-top:16px;" />
+            </div>
+
+            @*<ul class="nav nav-tabs" role="tablist" id="myTab" style="margin-top:8px">
+                <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Patient Overview</a></li>
+                <li role="presentation"><a href="#sleep" aria-controls="sleep" role="tab" data-toggle="tab">Sleep</a></li>
+                <li role="presentation"><a href="#calories" aria-controls="calories" role="tab" data-toggle="tab">Calories</a></li>
+                <li role="presentation"><a href="#steps" aria-controls="steps" role="tab" data-toggle="tab">Steps</a></li>
+            </ul>*@
+
+            <div class="tab-content" style="margin-top:8px">
+
+                @*<div role="tabpanel" class="tab-pane fade in active" id="overview">
+                    <div class="vital-section" style="border:none">
+                        <div class="col-md-4 vital-subsection">
+                            <div class="font-medium">ID#</div>
+                            <div class="font-xxlarge">1138A</div>
+                        </div>
+                        <div class="col-md-4 vital-subsection" style="margin-left:8px;margin-right:-8px">
+                            <div class="font-medium">Age</div>
+                            <div class="font-xxlarge">34</div>
+                        </div>
+                        <div class="col-md-4" style="margin: 10px -8px 0 8px">
+                            <div class="font-medium">Height</div>
+                            <div class="font-xxlarge">5'8</div>
+                        </div>
+                    </div>
+                    <div class="vital-section">
+                        <div class="col-md-5 vital-subsection">
+                            <div class="font-medium">Blood Pressure</div>
+                            <div>
+                                <span class="font-xxlarge" style="display:inline">120/90</span>
+                                <img src="~/Content/Images/appt_redArrow.png" style="display:inline;margin-bottom:16px;margin-left:2px" />
+                            </div>
+                        </div>
+                        <div class="col-md-7" style="margin: 10px -8px 0 8px">
+                            <div class="font-medium">Cholesterol</div>
+                            <div>
+                                <div class="font-medium" style="display:inline">LDL</div>
+                                <div class="font-xxlarge" style="display:inline">160</div>
+                                <div class="font-medium" style="display:inline;margin-left:4px">HDL</div>
+                                <div class="font-xxlarge" style="display:inline">70</div>
+                                <img src="~/Content/Images/appt_redArrow.png" style="display:inline;margin-bottom:16px;margin-left:2px" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vital-section">
+                        <div class="col-md-7 vital-subsection">
+                            <div class="font-medium">Weight</div>
+                            <div>
+                                <img src="~/Content/Images/appt_chart.png" style="display:inline;margin-bottom:16px" />
+                                <span class="font-xxlarge" style="display:inline">134</span>
+                                <span class="font-xlarge" style="display:inline">lbs</span>
+                                <img src="~/Content/Images/appt_greenArrow.png" style="display:inline;margin-bottom:16px;margin-left:2px" />
+                            </div>
+                        </div>                    
+                    </div>
+                </div>*@
+
+                <div role="tabpanel" class="tab-pane fade" id="sleep">
+                    <div class="font-xxlarge">130h</div>
+                    <img src="~/Content/Images/appt_sleep.png" />
+                    <div class="band-section">
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_barChart.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Average bedtime</div>
+                            </div>
+                            <div class="font-xxlarge">11:21 pm</div>
+                        </div>
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_clock.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Avg. time to sleep</div>
+                            </div>
+                            <div class="font-xxlarge">10m 02s</div>
+                        </div>
+                    </div>
+                    <div class="band-section">
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_barChart.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Avg. wake-up time</div>
+                            </div>
+                            <div class="font-xxlarge">6:55 am</div>
+                        </div>
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_clock.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Average duration</div>
+                            </div>
+                            <div class="font-xxlarge">6h 36m</div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="calories">
+                    <img src="~/Content/Images/appt_calories.png" />
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="steps">
+                    <div class="font-xxlarge">32,780 steps</div>
+                    <img src="~/Content/Images/appt_steps.png" />
+                    <div class="band-section">
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_upArrow.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Most steps</div>
+                            </div>
+                            <div class="font-xxlarge">6,974</div>
+                        </div>
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_downArrow.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Fewest steps</div>
+                            </div>
+                            <div class="font-xxlarge">2,160</div>
+                        </div>
+                    </div>
+                    <div class="band-section">
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_barChart.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Average daily steps</div>
+                            </div>
+                            <div class="font-xxlarge">4,683</div>
+                        </div>
+                        <div class="col-md-6 band-subsection">
+                            <div class="font-medium">
+                                <img src="~/Content/Images/appt_upArrow.png" style="margin-bottom:4px" />
+                                <div style="display:inline">Peak HR</div>
+                            </div>
+                            <div class="font-xxlarge">199</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bottomInfo" class="row height-notes no-pad">
+    <div class="height-fill col-md-8 no-pad" style="padding: 16px 0">
+        <div class="row no-margin">
+            <div class="col-md-3 height-fill no-pad" style="border-style: solid; border-width: 0 1px 0 0; border-color: lightgray;">
+                <div class="font-large" style="color:#459CE3">
+                    Appointment Notes
+                </div>
+                <div class="font-medium font-lightgray" style="border-width: 0 0 1px 0; border-style: solid; border-color: lightgray; padding-bottom: 8px; padding-top: 2px;">
+                    By Date:
+                </div>
+                <div style="padding: 12px 0">
+                    <div id="firstTextBtn" class="textButtons font-bold font-medium" style="margin-bottom:8px; cursor:pointer">Today's Appointment</div>
+                    <div id="secondTextBtn" class="textButtons font-medium font-lightgray" style="margin-bottom: 8px; cursor:pointer">November 14, 2014</div>
+                    <div id="thirdTextBtn" class="textButtons font-medium font-lightgray" style="cursor: pointer">August 28, 2014</div>
+                </div>
+            </div>
+            <div class="col-md-9 height-fill" style="padding-right:0">
+                <div id="note-title" class="font-bold font-medium" style="margin-bottom:4px">Today's Notes:</div>
+                <div class="col-md-12 height-fill no-pad">
+                    <textarea id="firstText" class="textAreas"></textarea>
+                    <textarea id="secondText" class="textAreas" style="display:none;" readonly>Vitals are still good overall and stress levels have reduced in the past 3 months. Need to continue monitoring blood pressure and cholestorol levels with a followup appointment in 6 months.</textarea>
+                    <textarea id="thirdText" class="textAreas" style="display:none" readonly>Vitals are good overall. Need to schedule a followup appointment in 3 months to monitor blood pressure and cholesterol levels. Mentioned high stress levels for the past month.</textarea>
+                </div>
+                <div class="pull-right">
+                    <div class="font-lightgray" style="margin-top: 16px;display: inline-block;padding: 0 32px;">Cancel</div>
+                    <button class="btn" style="width: 110px;background-color: #F9B460;color: white;border: none;border-radius: 0;">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/config.js" typeof="text/javascript"></script>
+    <script src="~/Scripts/appointment.js" typeof="text/javascript"></script>
+}

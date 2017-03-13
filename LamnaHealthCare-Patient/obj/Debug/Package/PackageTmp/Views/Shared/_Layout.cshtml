@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamna Healthcare</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="https://swx.cdn.skype.com/shared/v/1.2.15/SkypeBootstrap.min.js"></script>
+</head>
+
+<body>
+    @if (ViewData["apiKey"] != null)
+    {
+        @Html.Hidden("apiKey", ViewData["apiKey"], new { id = "apiKey" })
+    }
+    <div id="navigation" class="navbar navbar-default navbar-fixed-top" style="background-color:#333333; border:none">
+        <div class="container">
+            <div class="navbar-header" style="width:100%; padding: 10px 0">
+                <div class="navbar-header">
+                    @*<a class="navbar-brand" href="@Url.Action("Login", "Account", new { sip = Request.QueryString["sip"], pw = Request.QueryString["pw"], patient = Request.QueryString["patient"], displayName = Request.QueryString["displayName"] })" style="margin:0"><img src="~/Content/Images/lamnaHealthcare.png" style="  height: 42px;margin-top: 3px;" /></a>*@
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home", new { sip = Request.QueryString["sip"], pw = Request.QueryString["pw"], patient = Request.QueryString["patient"], displayName = Request.QueryString["displayName"] })" style="margin:0"><img src="~/Content/Images/lamnaHealthcare.png" style="  height: 42px;margin-top: 3px;" /></a>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Schedule", "Index", "Home", new { sip = @Request.QueryString["sip"], pw = @Request.QueryString["pw"], patient = @Request.QueryString["patient"] }, new { @class = "navbar-brand selected", @style = "color:white; margin-left:56px" })
+                @Html.ActionLink("Patients", "Appointment", "Home", new { sip = @Request.QueryString["sip"], pw = @Request.QueryString["pw"], patient = @Request.QueryString["patient"] }, new { @class = "navbar-brand", @style = "color:white; margin-left:45px" })
+                @Html.ActionLink("Prescriptions", "Index", "Home", new { sip = @Request.QueryString["sip"], pw = @Request.QueryString["pw"], patient = @Request.QueryString["patient"] }, new { @class = "navbar-brand", @style = "color:white; margin-left:45px" })
+                @Html.ActionLink(string.Format("Messages{0}", ViewContext.RouteData.Values["action"].ToString().Equals("Login", StringComparison.InvariantCultureIgnoreCase) ? "" : " (3)"), "Index", "Home", new { sip = @Request.QueryString["sip"], pw = @Request.QueryString["pw"], patient = @Request.QueryString["patient"] }, new { @class = "navbar-brand", @style = "color:white; margin-left:45px" })
+
+                <ul display="width:100%" class="nav navbar-nav navbar-right" style="margin-top:4px">
+                    <li><div id="doctor-photo" style="margin-top:2px; display:none"><img src="~/Content/Images/cal_drPhoto.png" /></div></li>
+                    <li><div id="doctor-name" style="font-size: 16px; color: white; margin: 10px 0 0 10px"> </div></li>
+                    <li><div id="online-indicator" style="width:10px; height:10px; background-color:none; margin-top:14px; margin-left:8px;border-radius:5px"></div></li>
+                </ul>
+            </div>
+        </div>
+        @if (ViewContext.RouteData.Values["action"].ToString() == "Index")
+        {
+            <div class="header-schedule">
+                <div>
+                    <img src="~/Content/Images/cal_scheduleIcon.png" style="margin-top:-4px" />
+                    <span class="font-large bold" style="margin:0 4px 0 2px; color:#216C3C">Today's Schedule:</span>
+                    <span class="font-large" style="color:white">5 Appointments, 1 Meeting</span>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (ViewContext.RouteData.Values["action"].ToString() == "Index")
+    {
+        <div id="bodyContainer" class="container calendar-content">
+            @RenderBody()
+        </div>
+    }
+    else
+    {
+        <div id="bodyContainer" class="container appt-content">
+            @RenderBody()
+        </div>
+    }
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

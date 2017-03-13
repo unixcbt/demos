@@ -1,0 +1,517 @@
+﻿html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top:16px;
+    height: 100%;
+    max-width: none;
+}*/
+
+.cursor {
+    cursor: pointer;
+}
+
+.calendar-content {
+    margin-top: 60px;
+}
+
+.appt-content {
+    margin-top: 36px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fullscreen-container {
+        max-width: 3000px;
+    }
+}
+
+.width-fill {
+    width: 100%;
+}
+
+.height-fill {
+    height: 100%;
+}
+
+.height-video {
+    height: 564px;
+}
+
+.height-notes {
+    height: 210px;
+}
+
+.no-pad {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.fullscreen {
+    margin: -80px 0 0 -2px;
+}
+
+.btn-dropdown {
+    width: 100px;
+    background-color: white;
+    border: 1px solid #BFBFBF;
+    border-radius: 0;
+    font-size: medium;
+}
+
+.calendar {
+    display: inline-block;
+    width: 100%;
+}
+
+    .calendar .cal-header {
+        /*display: flex;
+    width: inherit;*/
+        min-height: 54px;
+        border-color: #e7e7e7;
+        border-width: 1px 0;
+        border-style: solid;
+        padding: 8px 24px;
+    }
+
+        .calendar .cal-header .cal-content {
+            display: block;
+            clear: none;
+            width: 95%;
+        }
+
+.cal-header-item {
+    clear: both;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px 0;
+    font-size: large;
+    font-weight: bold;
+}
+
+.calendar .cal-row {
+    /*display: flex;
+    width: inherit;*/
+    min-height: 80px;
+    border-color: #e7e7e7;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+}
+
+    .calendar .cal-row .cal-content {
+        width: 95%;
+        margin-top: -75px;
+    }
+
+    .calendar .cal-row:nth-child(even) {
+        background-color: #fcfcfc;
+    }
+
+    .calendar .cal-row .cal-time {
+        display: inline-block;
+        width: 5%;
+        height: inherit;
+        font-size: 1.5em;
+        font-weight: 700;
+        /*align-self: center;*/
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+        .calendar .cal-row .cal-time::after {
+            align-self: center;
+            position: relative;
+            float: left;
+            margin-left: 10px;
+            left: 100%;
+            content: "";
+            width: 1860%;
+            border-bottom: 1px dashed #e7e7e7;
+            z-index: 10;
+            top: -12px;
+        }
+
+.cal-appt {
+    background-color: rgba(255,255,255,.9);
+    clear: both;
+    position: absolute;
+    z-index: 11;
+    min-width: 205px;
+    max-width: 205px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 2px;
+}
+
+    .cal-appt.appt {
+        /*background-color: rgba(0, 255, 0, .9);*/
+        background-color: #C3DBEF;
+        border-color: #459CE3;
+        border-width: 0 0 0 6px;
+        border-style: solid;
+    }
+
+    .cal-appt.meeting {
+        background-color: #D4EFC4;
+        border-color: #75CE4E;
+        border-width: 0 0 0 6px;
+        border-style: solid;
+    }
+
+    .cal-appt.event {
+        background-color: palevioletred;
+        border-color: darkred;
+        border-width: 0 0 0 6px;
+        border-style: solid;
+    }
+
+    .cal-appt:nth-child(1) {
+        margin-left: 17px;
+    }
+
+.cal-appt-offset-1 {
+    margin-left: 17px !important;
+}
+
+.cal-appt:nth-child(2) {
+    margin-left: 234px;
+}
+
+.cal-appt-offset-2 {
+    margin-left: 234px !important;
+}
+
+.cal-appt:nth-child(3) {
+    margin-left: 452px;
+}
+
+.cal-appt-offset-3 {
+    margin-left: 452px !important;
+}
+
+.cal-appt:nth-child(4) {
+    margin-left: 670px;
+}
+
+.cal-appt-offset-4 {
+    margin-left: 670px !important;
+}
+
+.cal-appt:nth-child(5) {
+    margin-left: 888px;
+}
+
+.cal-appt-offset-5 {
+    margin-left: 888px !important;
+}
+
+.cal-appt.half-hour {
+    margin-top: 37px;
+}
+
+/* How many half-hour blocks does this appointment take up */
+.cal-appt-1 {
+    min-height: 40px;
+}
+
+.cal-appt-2 {
+    min-height: 77px;
+}
+
+.cal-appt-3 {
+    min-height: 160px;
+}
+
+.cal-appt-4 {
+    min-height: 240px;
+}
+
+.appt .cal-appt-name {
+    min-width: 208px;
+    max-width: 208px;
+    font-size: large;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 4px;
+    color: #265F8E;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+.appt .cal-appt-time {
+    min-width: 200px;
+    max-width: 200px;
+    font-size: large;
+    position: absolute;
+    margin-top: 26px;
+    margin-left: 4px;
+    color: #265F8E;
+}
+
+.meeting .cal-appt-name {
+    min-width: 208px;
+    max-width: 208px;
+    font-size: large;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 4px;
+    color: #38661F;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+.meeting .cal-appt-time {
+    min-width: 200px;
+    max-width: 200px;
+    font-size: large;
+    position: absolute;
+    margin-top: 26px;
+    margin-left: 4px;
+    color: #38661F;
+}
+
+.cal-border {
+    min-height: 80px;
+    border-color: #e7e7e7;
+    border-style: solid;
+    clear: both;
+    position: absolute;
+}
+
+.cal-border-1 {
+    margin-left: 10px !important;
+    border-width: 0 1px;
+    min-width: 220px;
+}
+
+.cal-border-2 {
+    margin-left: 444px !important;
+    border-width: 0 1px;
+    min-width: 220px;
+}
+
+.cal-border-3 {
+    margin-left: 880px !important;
+    border-width: 0 0 0 1px;
+}
+
+.cal-selected-day {
+    background-color: #C3DBEF;
+    opacity: 0.25;
+    min-height: 800px;
+    min-width: 220px;
+    max-width: 220px;
+    margin-left: 444px !important;
+    border: none;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.selected {
+    padding: 0 4px 4px 4px;
+    margin: 15px 15px -4px 30px;
+}
+
+.flex-container {
+    margin: auto;
+}
+
+    .flex-container > * {
+        position: relative;
+        float: left;
+    }
+
+.header-schedule {
+    background-color: #82CA9C;
+    padding: 8px 24px;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.font-medium {
+    font-size: medium;
+}
+
+.font-large {
+    font-size: large;
+}
+
+.font-xlarge {
+    font-size: x-large;
+}
+
+.font-xxlarge {
+    font-size: xx-large;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.upcoming-appointment {
+    border-color: #e7e7e7;
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    padding: 24px;
+}
+
+.upcoming-appt-header {
+    font-weight: bold;
+    margin-top: -8px;
+    margin-bottom: 16px;
+    font-size: medium;
+}
+
+.overlay {
+    width: 380px;
+    height: 240px;
+    background-color: #459CE3;
+    top: 90px;
+    right: 20px;
+    z-index: 10001;
+    padding: 24px 0 0 24px;
+    cursor: pointer;
+    position: fixed;
+    border-radius: 7px;
+    -webkit-box-shadow:  -10px -10px 10px grey;
+    box-shadow: -5px -5px 10px grey;
+    -moz-box-shadow:  -5px -5px 10px grey;
+}
+
+.overlay-patient {
+    position: absolute;
+    min-width: 335px;
+    max-width: 335px;
+    font-size: 3em;
+    color: white;
+    line-height: 50px;
+}
+
+.overlay-time {
+    position: absolute;
+    margin-top: 154px;
+    font-size: 1.8em;
+    color: #99D1FF;
+}
+
+.textAreas {
+    width: 100%;
+    height: 90px;
+    max-width: 1200px;
+}
+
+.vital-section {
+    border-color: #e7e7e7;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    padding: 6px 0;
+    height: 100px;
+}
+
+.vital-subsection {
+    border-color: #e7e7e7;
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    padding: 10px 8px;
+}
+
+.band-section {
+    padding: 6px 0;
+    height: 82px;
+}
+
+.band-subsection {
+    padding: 10px 8px;
+}
+
+.font-lightgray {
+    color: #959595;
+}
+
+.loading-text {
+    font-size: large;
+    color: white;
+    text-align: center;
+    width: 342px;
+    margin: 12px auto;
+    line-height: 28px;
+}
+
+.loginbox {
+    width: 300px;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #D3D3D3;
+    border-radius: 10px;
+    background-color: #F7F7F7;
+}
+
+.validation-summary-errors {
+    margin-bottom: 10px;
+}
+
+#doctor-photo img {
+    width: 36px;
+}
+
+#doctor-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    overflow: hidden;
+}
